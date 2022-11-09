@@ -1,30 +1,39 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  import svelteLogo from "./assets/svelte.svg";
+  import VNC from "./lib/methods/vncpassword";
+
+  let in_: string = "";
+  let out_: string = "";
 </script>
+
+<div>
+  <input bind:value={in_} maxlength="8" />
+  <div>Input: {in_}</div>
+  <div>Output: {#await VNC.encrypt(in_, true)}...{:then s}{s}{/await}</div>
+</div>
 
 <main>
   <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
+    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
       <img src="/vite.svg" class="logo" alt="Vite Logo" />
     </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
+    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </div>
   <h1>Vite + Svelte</h1>
 
-  <div class="card">
-    <Counter />
-  </div>
+  <div class="card" />
 
   <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
+    Check out <a
+      href="https://github.com/sveltejs/kit#readme"
+      target="_blank"
+      rel="noreferrer">SvelteKit</a
+    >, the official Svelte app framework powered by Vite!
   </p>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
+  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
 </main>
 
 <style>
