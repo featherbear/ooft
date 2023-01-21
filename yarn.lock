@@ -720,8 +720,8 @@ vite@^3.2.3:
     fsevents "~2.3.2"
 
 vncpasswd-js@featherbear/vncpasswd-js:
-  version "1.0.2"
-  resolved "https://codeload.github.com/featherbear/vncpasswd-js/tar.gz/361b9c795b8255bec76193ac3076666c85fb4c53"
+  version "1.0.3"
+  resolved "https://codeload.github.com/featherbear/vncpasswd-js/tar.gz/4a712cdb4bfd672dc86f795379f9301c6428d02f"
   dependencies:
     typescript "^4.8.4"
 
